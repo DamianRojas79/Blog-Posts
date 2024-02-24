@@ -5,9 +5,15 @@ def create_app():
     app= Flask (__name__)
 
 
-    @app.route('/')
-    def hola():
-        return 'Hola Blog_Post'
+    # Registrar Vistas
+    from blogr import home
+    app.register_blueprint(home.bp)
+
+    from blogr import auth
+    app.register_blueprint(auth.bp)
+   
+    from blogr import post
+    app.register_blueprint(post.bp)
 
 
     return app
