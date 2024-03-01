@@ -1,12 +1,12 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
 
 bp=Blueprint ('home',__name__)
 
 @bp.route('/')
 def index():
-    return 'Pagina de Inicio'
+    return render_template ('index.html')
 
 
 @bp.route('/blog')
 def blog():
-    return 'Pagina de Blog'
+    return render_template('blog.html')
