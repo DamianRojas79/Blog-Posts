@@ -1,4 +1,7 @@
 from flask import Flask 
+from flask_sqlalchemy import SQLAlchemy
+
+db=SQLAlchemy()
 
 def create_app():
     # Crear aplicación de flask
@@ -6,6 +9,7 @@ def create_app():
 
     # Aplica configuracion del sistema del archivo config
     app.config.from_object('config.Config')
+    db.init_app(app)
 
     # Registrar Vistas
     from blogr import home
