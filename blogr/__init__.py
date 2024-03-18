@@ -21,6 +21,12 @@ def create_app():
     from blogr import post
     app.register_blueprint(post.bp)
 
+    from .models import User, Post
+
+    # Migra los modelos automaticamente a la base de datos
+    with app.app_context():
+        db.create_all()
+
 
     return app
 
