@@ -7,7 +7,7 @@ POSTGRESQL=os.getenv("POSTGRESQL")
 
 class Config:
     DEBUG= True
-    SECRET_kEY='dev'
+    SECRET_KEY='dev'
 
     SQLALCHEMY_DATABASE_URI=POSTGRESQL
  
